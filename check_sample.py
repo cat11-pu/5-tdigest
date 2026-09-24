@@ -29,7 +29,9 @@ def main() -> int:
     for value in spec["small_sample"]:
         small_exact.add(value)
     print("小样本与精确值一致 =", small.percentile(0.5) == small_exact.percentile(0.5))
+    print("小样本精确中位数 =", small_exact.percentile(0.5))
     print("样本数 =", len(spec["samples"]))
+    print("最大偏差 =", max(row[2] for row in rows))
     return 0
 
 
